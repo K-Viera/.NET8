@@ -34,9 +34,12 @@ namespace ClassLibraryTest.Generics
     }
     public class MultipleSelectionExam : Test {
         public List<bool> Answers { get; private set; }
-        public MultipleSelectionExam(string topic, List<bool> answers) : base(topic)
+        public float ExcellentNote {get; set; }
+
+        public MultipleSelectionExam(string topic, List<bool> answers, float excellentNote) : base(topic)
         {
             Answers = answers;
+            ExcellentNote = excellentNote;
         }
 
         public override float CalculateFinalGrade()
@@ -44,7 +47,7 @@ namespace ClassLibraryTest.Generics
             int totalQuestion = Answers.Count;
             int totalCorrect = Answers.Where(x=>x.Equals(true)).Count();
 
-            Grade = totalCorrect / totalQuestion * 5;
+            Grade = totalCorrect / totalQuestion * ExcellentNote;
 
             return Percentaje * Grade;
         }

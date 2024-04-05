@@ -21,7 +21,7 @@ namespace ClassLibraryTest.Generics
 
             // Adding MultipleSelectionExam
             List<bool> answers = new List<bool> { true, true, true, true };
-            MultipleSelectionExam multipleSelectionExam = new MultipleSelectionExam("Geometry", answers);
+            MultipleSelectionExam multipleSelectionExam = new MultipleSelectionExam("Geometry", answers,5);
             multipleSelectionExam.Percentaje = 0.5f;
             mathTests.Tests.Add(multipleSelectionExam);
 
