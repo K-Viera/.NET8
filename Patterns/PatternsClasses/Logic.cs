@@ -1,5 +1,6 @@
 ﻿using PatternsClasses.Builder;
 using PatternsClasses.Builder.ConcreteBuilders;
+using PatternsClasses.Factory;
 using System;
 using System.Collections.Generic;
 
@@ -8,7 +9,7 @@ namespace PatternsClasses
     public static class Logic
     {
         public static void Execute() {
-            PizzaLogic();
+            LogicFactory.Execute();
         }
         private static void PizzaLogic()
         {

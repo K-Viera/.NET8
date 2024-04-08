@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace PatternsClasses.Builder
 {
-    public class BasicPizzaBuilder
+    public abstract class BasicPizzaBuilder
     {
         protected string? Sauce;
         protected string? Dough;
