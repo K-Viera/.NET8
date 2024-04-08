@@ -5,9 +5,29 @@ using System.Collections.Generic;
 
 namespace PatternsClasses
 {
-    public class Logic
+    public static class Logic
     {
-        public void Execute() {
+        public static void Execute() {
+            PizzaLogic();
+        }
+        private static void PizzaLogic()
+        {
+            var classicBuilder = new ClassicPizzaBuilder();
+            var classicPizza1 = classicBuilder.AddSauce().AddDough().CreatePizzaBase();
+            var classicPizza2 = classicBuilder.AddSauce().AddDough().CreatePizzaBase();
+
+            var spicyBuilder = new SpicyPizzaBuilder();
+            var spicyPizza1 = spicyBuilder.AddDough().AddSauce().CreatePizzaBase();
+            var spicyPizza2 = spicyBuilder.AddSauce().AddDough().CreatePizzaBase();
+
+            var pizzaList = new List<Pizza>() {classicPizza1,classicPizza2,spicyPizza1,spicyPizza2 };
+
+            foreach (var p in pizzaList)
+            {
+                p.Print();
+            }
+        }
+        private static void ProfileLogic() {
             var individualProfileBuilder = new IndividualBuilder();
             SocialMediaProfile profile1 = individualProfileBuilder.SetName("kevin").Build();
             SocialMediaProfile profile2 = individualProfileBuilder.SetName("isabella").Build();
